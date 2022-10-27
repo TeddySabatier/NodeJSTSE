@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TSE</title>
+    <link rel="stylesheet" type="text/css" href="../style/game_chat_style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+
+<head>
+    <title>Meeting in TSE</title>
+    <link rel="stylesheet" type="text/css" href="../style/game_chat_style.css" />
+</head>
+
+<body>
+
+    <span>
+        <div id="users">
+            <ul id="NewUsersMessages"></ul>
+            <p id="NbUsers"></p>
+        </div>
+        <div id="canvasLayerList">
+            <canvas id="ground" width="800" height="600"></canvas>
+            <canvas id="object" width="800" height="600"></canvas>
+        </div>
+        <div id="bottom">
+            <button class="btn" onclick="window.location.href = 'http://localhost:3000/';">Disconnect</button>
+        </div>
+    </span>
+    <div class="popup">
+        <div class="form-popup" id="popupChat">
+            <form class="form-container">
+                <p>Chatter avec</p>
+                <p id="Username"></p>
+                <button type="button" class="btn" id="btn_chatter" onclick="chatRequestAccepted()">Chatter</button>
+                <button type="button" class="btn cancel" id="btn_refuser"" onclick="
+                    chatRequestRefused()">Refuser</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="form-popup" id="popupMessage">
+            <form class="form-container">
+                <p id="Popup-text">Chat refuser</p>
+                <button type="button" class="btn cancel" onclick="closeMessage()">Ok</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="form-popup" id="messageContainer">
+            <span id="form">
+                <ul id="messages">
+                </ul>
+                <p id="typingSpace"></p>
+                <input id="input" autocomplete="off"  />
+                <button class="btn" id="btnSend" onclick="sendMessage()">Send</button>
+                <button class="btn" onclick="closeChat()">Close</button>
+            </span>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../js/client/game_ex.js"></script>
+
+</body>
+
+</html>

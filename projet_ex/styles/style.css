@@ -1,0 +1,25 @@
+body {
+	margin: 0px;
+}
+
+#canvasLayerList {
+    position: relative;
+    width: 600px;
+    height: 800px;
+    margin: 50px auto;
+    background-color: black;
+}
+
+#ground {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+#object {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    cursor: url(target.png), pointer;
+}

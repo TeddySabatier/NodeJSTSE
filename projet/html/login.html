@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../style/login_style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <title>Connection</title>
+</head>
+
+<body>
+  <div class="main">
+    <p class="sign" align="center">Login</p>
+    <input class="un " type="text" align="center" placeholder="Username" id="NickName" maxlength="30">
+    <button onclick="url();" class="submit" align="center">Se connecter</button>
+    <div class="characterSelect">
+      <span class="checkDiv">
+        <span class="textSpan">
+          <input type="radio" id="radio1" name="avatarChoice" value="avatar1">
+          <label for="radio1">Character N°1</label>
+        </span>
+        <img id="img1" alt="Character N°1" src="../ressource/sprite/S_01.png">
+      </span>
+      <span class="checkDiv">
+        <span class="textSpan">
+          <input type="radio" id="radio2" name="avatarChoice" value="avatar2">
+          <label for="radio2">Character N°2</label>
+        </span>
+        <img id="img2" alt="Character N°2" src="../ressource/sprite/S_02.png">
+      </span>
+      <span class="checkDiv">
+        <span class="textSpan">
+          <input type="radio" id="radio3" name="avatarChoice" value="avatar3">
+          <label for="radio3">Character N°3</label>
+        </span>
+        <img id="img3" alt="Character N°3" src="../ressource/sprite/S_03.png">
+      </span>
+    </div>
+  </div>
+  <script>
+    function url() {
+      const rbs = document.querySelectorAll('input[name="avatarChoice"]');
+      let selectedValue;
+      for (const rb of rbs) {
+        if (rb.checked) {
+          selectedValue = rb.value;
+          break;
+        }
+      }
+      if (document.getElementById("NickName").value && selectedValue) {
+        document.location.href = "http://localhost:3000/user/?user=" + document.getElementById("NickName").value + "&character=" + selectedValue;
+      }
+    }
+  </script>
+</body>
+
+</html>
